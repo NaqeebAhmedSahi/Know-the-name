@@ -11,11 +11,28 @@ document.querySelector("#app").innerHTML = `
 
     <p id="loveText" class="hidden">First Name ❤️ Second name</p>
   </div>
+  
+    <div id="questionSection" class="hidden">
+      <h3>Is it true? 🤔</h3>
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+    <p id="finalMessage" class="hidden"></p>
+  </div>
 `;
 
 document.querySelector("#showPartner").addEventListener("click", () => {
   document.querySelector("#partnerName").classList.remove("hidden");
   document.querySelector("#loveText").classList.remove("hidden");
+  document.querySelector("#questionSection").classList.remove("hidden");
 });
 
+document.querySelector("#yesBtn").addEventListener("click", () => {
+  document.querySelector("#finalMessage").innerText = "You are deeply in love with Second Name ❤️";
+  document.querySelector("#finalMessage").classList.remove("hidden");
+});
 
+document.querySelector("#noBtn").addEventListener("click", () => {
+  document.querySelector("#finalMessage").innerText = "I know in your heart you don’t want to touch No, so click Yes...";
+  document.querySelector("#finalMessage").classList.remove("hidden");
+});
